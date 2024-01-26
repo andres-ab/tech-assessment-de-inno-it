@@ -1,0 +1,11 @@
+version: "3"
+services:
+
+    jupyter:
+        image: jupyter/datascience-notebook:python-3.11
+        ports:
+            - 8888:8888
+        volumes:
+            - ".:/home/jovyan/work"
+        working_dir: /home/jovyan/work
+        command: ["jupyter", "lab", "--NotebookApp.token=''"]
